@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.recyclerviewpagination.adapter.PagingAdapter
+import com.example.recyclerviewpagination.adapter.CustomPagingAdapter
 import com.example.recyclerviewpagination.adapter.RvScrollingListener
 import com.example.recyclerviewpagination.databinding.ActivityMainBinding
 import com.example.recyclerviewpagination.model.Item
@@ -16,7 +16,7 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    lateinit var paginationAdapter: PagingAdapter
+    lateinit var paginationAdapter: CustomPagingAdapter
 
     lateinit var linearLayoutManager: LinearLayoutManager
 
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         linearLayoutManager = LinearLayoutManager(this)
 
-        paginationAdapter = PagingAdapter()
+        paginationAdapter = CustomPagingAdapter()
         binding.recyclerView.addOnScrollListener(object : RvScrollingListener(linearLayoutManager) {
             override fun loadMoreItems() {
                 isLoading = true

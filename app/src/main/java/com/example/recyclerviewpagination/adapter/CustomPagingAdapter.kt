@@ -9,7 +9,7 @@ import com.example.recyclerviewpagination.databinding.ItemLoadBinding
 import com.example.recyclerviewpagination.model.Data
 import com.squareup.picasso.Picasso
 
-class PagingAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CustomPagingAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val userList: MutableList<Data> = mutableListOf()
     private var isLoadingAdded = false
 
